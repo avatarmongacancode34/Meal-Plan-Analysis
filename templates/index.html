@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meal Plan Analysis Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+      body {
+          font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+          background: #f5f7fa;
+          margin: 0;
+          padding: 0;
+      }
+
+      header {
+          background: #4CAF50;
+          color: white;
+          padding: 20px;
+          text-align: center;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+
+      h1 {
+          margin: 0;
+          font-size: 2rem;
+      }
+
+      main {
+          max-width: 900px;
+          margin: 30px auto;
+          background: white;
+          padding: 30px;
+          border-radius: 12px;
+          box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      }
+
+      .upload-box {
+          border: 2px dashed #4CAF50;
+          padding: 20px;
+          border-radius: 10px;
+          text-align: center;
+          margin-bottom: 30px;
+          background: #f9fff9;
+      }
+
+      input[type="file"] {
+          margin: 10px 0;
+      }
+
+      input[type="submit"] {
+          background: #4CAF50;
+          border: none;
+          padding: 10px 20px;
+          color: white;
+          font-weight: bold;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: 0.3s;
+      }
+
+      input[type="submit"]:hover {
+          background: #45a049;
+      }
+
+      h2 {
+          margin-top: 40px;
+          color: #333;
+          font-size: 1.4rem;
+          border-bottom: 2px solid #eee;
+          padding-bottom: 10px;
+      }
+
+      .grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+          gap: 15px;
+          margin-top: 20px;
+      }
+
+      .card {
+          background: #fafafa;
+          padding: 15px;
+          text-align: center;
+          border-radius: 10px;
+          box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+          transition: transform 0.2s;
+      }
+
+      .card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      }
+
+      .card a {
+          text-decoration: none;
+          display: block;
+          padding: 10px;
+          background: #4CAF50;
+          color: white;
+          border-radius: 6px;
+          font-weight: 500;
+          margin-top: 10px;
+      }
+
+      .card a:hover {
+          background: #45a049;
+      }
+
+      footer {
+          text-align: center;
+          font-size: 0.9rem;
+          padding: 20px;
+          margin-top: 30px;
+          color: #555;
+      }
+  </style>
+</head>
+<body>
+
+  <header>
+      <h1>Meal Plan Analysis Dashboard</h1>
+      <p>Explore your Meal Plan spendings & habits</p>
+  </header>
+
+  <main>
+      <section class="upload-box">
+          <form method="post" enctype="multipart/form-data" action="/upload">
+              <p><strong>Upload your Excel file</strong></p>
+              <input type="file" name="file" required>
+              <br>
+              <input type="submit" value="Upload & Process">
+          </form>
+      </section>
+
+      <section>
+          <h2>Visualizations</h2>
+          <div class="grid">
+              <div class="card">
+                  <h3>Cafe Spendings</h3>
+                  <a href="/cafe_spendings">View Chart</a>
+              </div>
+              <div class="card">
+                  <h3>Daily Visits</h3>
+                  <a href="/cafe_daily_visits">View Chart</a>
+              </div>
+              <div class="card">
+                  <h3>Hourly Visits</h3>
+                  <a href="/cafe_hourly_visits">View Chart</a>
+              </div>
+              <div class="card">
+                  <h3>Top Meals</h3>
+                  <a href="/meals">View Chart</a>
+              </div>
+              <div class="card">
+                  <h3>Popular Products</h3>
+                  <a href="/spending_wordcloud">Wordcloud</a>
+              </div>
+              <div class="card">
+                  <h3>Water Intake</h3>
+                  <a href="/water_intake">Check Stats</a>
+              </div>
+          </div>
+      </section>
+  </main>
+
+  <footer>
+      &copy; {{year}} Meal Plan Analysis Dashboard | Built by Shaun Monga
+  </footer>
+
+</body>
+</html>
