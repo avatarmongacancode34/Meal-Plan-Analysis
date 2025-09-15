@@ -1,5 +1,6 @@
-Flask
+flask
 pandas
 matplotlib
 seaborn
 wordcloud
+
