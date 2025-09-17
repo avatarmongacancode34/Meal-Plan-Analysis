@@ -4,5 +4,7 @@ matplotlib
 seaborn
 wordcloud
 gunicorn
+openpyxl
+
 
 
